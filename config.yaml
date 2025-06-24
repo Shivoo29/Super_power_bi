@@ -1,0 +1,16 @@
+# Data Automation Pipline Configuration
+
+paths:
+    input_folder: "./raw_data/"
+    output_file: "cleaned_data.csv"
+
+data_processing:
+    file_patterns: "*.xlsx" # Patterns to match Excel files
+    selected_columns: null
+    # Selected_columns: ["Data", "Sales", "Regions", "Produt"] --> Example
+    drop_duplicates: true
+    fill_na_method: null # Options: "forward", "backward", "zero", null
+
+logging:
+    level: "INFO" # DEBUG, INFO, WARNING, ERROR, CRITICAL
+    file: "pipeline.log"

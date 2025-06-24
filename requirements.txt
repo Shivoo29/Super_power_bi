@@ -1,0 +1,17 @@
+#Core data Processing
+pandas
+openpyxl>=3.0.0
+xlrd
+
+#Config and Env
+PyYAML
+python-dotenv
+
+#HTTP requests for Power BI API
+requests
+
+#Other
+schedule
+APScheduler
+colorlog
+pandera
