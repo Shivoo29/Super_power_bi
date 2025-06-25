@@ -14,7 +14,6 @@ logger = logging.getLogger(__name__)
 
 class Config:
     def __init__(self,config_path: str = "config.yaml"):
-        config_path: config.yaml
         self.config_path = config_path
         self.config = self._load_config()
     
