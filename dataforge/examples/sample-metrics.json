@@ -1,0 +1,66 @@
+[
+  {
+    "campaign": "Summer Sale",
+    "impressions": 125000,
+    "clicks": 3250,
+    "conversions": 185,
+    "spend": 4500,
+    "revenue": 22100
+  },
+  {
+    "campaign": "Black Friday",
+    "impressions": 450000,
+    "clicks": 12500,
+    "conversions": 890,
+    "spend": 15000,
+    "revenue": 98500
+  },
+  {
+    "campaign": "New Year Promo",
+    "impressions": 310000,
+    "clicks": 8200,
+    "conversions": 620,
+    "spend": 9800,
+    "revenue": 67400
+  },
+  {
+    "campaign": "Spring Launch",
+    "impressions": 220000,
+    "clicks": 5800,
+    "conversions": 340,
+    "spend": 6200,
+    "revenue": 38600
+  },
+  {
+    "campaign": "Email Campaign Q1",
+    "impressions": 85000,
+    "clicks": 4250,
+    "conversions": 290,
+    "spend": 1200,
+    "revenue": 24800
+  },
+  {
+    "campaign": "Social Media Push",
+    "impressions": 565000,
+    "clicks": 15200,
+    "conversions": 720,
+    "spend": 12000,
+    "revenue": 78400
+  },
+  {
+    "campaign": "Retargeting Campaign",
+    "impressions": 98000,
+    "clicks": 6800,
+    "conversions": 580,
+    "spend": 4200,
+    "revenue": 52600
+  },
+  {
+    "campaign": "Product Launch Beta",
+    "impressions": 175000,
+    "clicks": 4200,
+    "conversions": 195,
+    "spend": 8500,
+    "revenue": 28700
+  }
+]
