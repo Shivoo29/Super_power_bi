@@ -5,13 +5,18 @@
   "type": "module",
   "main": "dist-electron/main.js",
   "description": "A modern, developer-friendly Power BI alternative with neo-brutalism design",
-  "author": "DataForge Team",
+  "homepage": "https://github.com/Shivoo29/Super_power_bi",
+  "author": {
+    "name": "DataForge Team",
+    "email": "team@dataforge.dev"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && electron-builder",
-    "build:win": "npm run build && electron-builder --win",
-    "build:mac": "npm run build && electron-builder --mac",
-    "build:linux": "npm run build && electron-builder --linux",
+    "build": "tsc -b && vite build",
+    "package": "npm run build && electron-builder",
+    "package:win": "npm run build && electron-builder --win",
+    "package:mac": "npm run build && electron-builder --mac",
+    "package:linux": "npm run build && electron-builder --linux",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -27,16 +32,27 @@
       "output": "release"
     },
     "win": {
-      "target": ["nsis", "portable"],
+      "target": [
+        "nsis",
+        "portable"
+      ],
       "icon": "assets/icon.ico"
     },
     "mac": {
-      "target": ["dmg", "zip"],
+      "target": [
+        "dmg",
+        "zip"
+      ],
       "icon": "assets/icon.icns",
       "category": "public.app-category.business"
     },
     "linux": {
-      "target": ["AppImage", "deb", "rpm", "snap"],
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm",
+        "snap"
+      ],
       "icon": "assets/icon.png",
       "category": "Office"
     }
@@ -47,16 +63,13 @@
     "@dnd-kit/utilities": "^3.2.2",
     "@duckdb/duckdb-wasm": "^1.30.0",
     "@monaco-editor/react": "^4.7.0",
-    "autoprefixer": "^10.4.22",
     "echarts": "^6.0.0",
     "echarts-for-react": "^3.0.5",
     "lucide-react": "^0.554.0",
     "papaparse": "^5.5.3",
-    "postcss": "^8.5.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-grid-layout": "^1.5.2",
-    "tailwindcss": "^4.1.17",
     "xlsx": "^0.18.5",
     "zustand": "^5.0.8"
   },
@@ -66,7 +79,9 @@
     "@types/papaparse": "^5.5.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
+    "@types/react-grid-layout": "^1.3.6",
     "@vitejs/plugin-react": "^5.1.0",
+    "autoprefixer": "^10.4.22",
     "concurrently": "^9.2.1",
     "cross-env": "^10.1.0",
     "electron": "^39.2.2",
@@ -76,6 +91,8 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.3",
     "vite": "^7.2.2",

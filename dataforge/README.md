@@ -54,11 +54,18 @@ npm run dev
 # Build for production
 npm run build
 
-# Build for specific platform
-npm run build:win    # Windows
-npm run build:mac    # macOS
-npm run build:linux  # Linux
+# Package for distribution
+npm run package           # Current platform
+npm run package:win       # Windows
+npm run package:mac       # macOS
+npm run package:linux     # Linux
 ```
+
+## 📖 Documentation
+
+- **[USAGE.md](USAGE.md)** - Complete user guide with examples
+- **[DEVELOPER.md](DEVELOPER.md)** - Development guide and API reference
+- **[CONTRIBUTING.md](#contributing)** - How to contribute
 
 ## 🎯 Quick Start
 

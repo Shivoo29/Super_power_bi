@@ -1,12 +1,8 @@
 import React from 'react'
 import {
-  Save,
   Download,
   Code,
-  Play,
-  Settings,
   Plus,
-  FileText,
 } from 'lucide-react'
 import { useStore } from '../store/useStore'
 

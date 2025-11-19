@@ -59,7 +59,7 @@ interface AppState {
   setSqlEditorOpen: (open: boolean) => void
 }
 
-export const useStore = create<AppState>((set, get) => ({
+export const useStore = create<AppState>((set) => ({
   // Data sources
   dataSources: [],
   addDataSource: (source) =>

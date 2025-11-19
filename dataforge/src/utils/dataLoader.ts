@@ -1,6 +1,6 @@
 import Papa from 'papaparse'
 import * as XLSX from 'xlsx'
-import { DataSource } from '../store/useStore'
+import type { DataSource } from '../store/useStore'
 
 export const loadCSVFile = async (file: File): Promise<DataSource> => {
   return new Promise((resolve, reject) => {
@@ -44,7 +44,7 @@ export const loadExcelFile = async (file: File): Promise<DataSource> => {
 
         // Convert to JSON
         const jsonData = XLSX.utils.sheet_to_json(worksheet, { defval: null })
-        const columns = jsonData.length > 0 ? Object.keys(jsonData[0]) : []
+        const columns = jsonData.length > 0 ? Object.keys(jsonData[0] as Record<string, any>) : []
 
         resolve({
           id: crypto.randomUUID(),
@@ -74,7 +74,7 @@ export const loadJSONFile = async (file: File): Promise<DataSource> => {
     reader.onload = (e) => {
       try {
         const content = e.target?.result as string
-        let data = JSON.parse(content)
+        let data: any = JSON.parse(content)
 
         // Handle different JSON formats
         if (!Array.isArray(data)) {
@@ -94,7 +94,7 @@ export const loadJSONFile = async (file: File): Promise<DataSource> => {
           }
         }
 
-        const columns = data.length > 0 ? Object.keys(data[0]) : []
+        const columns = data.length > 0 ? Object.keys(data[0] as Record<string, any>) : []
 
         resolve({
           id: crypto.randomUUID(),
@@ -157,19 +157,19 @@ export const aggregateData = (
     return acc
   }, {} as Record<string, any[]>)
 
-  return Object.entries(groups).map(([key, rows]) => {
+  return (Object.entries(groups) as [string, any[]][]).map(([key, rows]) => {
     const result: any = { [groupBy]: key }
 
     aggregations.forEach(({ column, func }) => {
-      const values = rows.map((r) => r[column]).filter((v) => v != null)
+      const values = rows.map((r: any) => r[column]).filter((v: any) => v != null)
 
       switch (func) {
         case 'sum':
-          result[`${column}_sum`] = values.reduce((a, b) => a + b, 0)
+          result[`${column}_sum`] = values.reduce((a: number, b: number) => a + b, 0)
           break
         case 'avg':
           result[`${column}_avg`] =
-            values.reduce((a, b) => a + b, 0) / values.length
+            values.reduce((a: number, b: number) => a + b, 0) / values.length
           break
         case 'count':
           result[`${column}_count`] = values.length

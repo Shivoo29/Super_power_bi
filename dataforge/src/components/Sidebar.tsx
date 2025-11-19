@@ -9,7 +9,6 @@ import {
   LineChart,
   ScatterChart,
   TrendingUp,
-  X,
   ChevronLeft,
   ChevronRight,
 } from 'lucide-react'

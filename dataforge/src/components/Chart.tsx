@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactECharts from 'echarts-for-react'
-import { Settings, Trash2, Edit2, X } from 'lucide-react'
-import { useStore, ChartConfig } from '../store/useStore'
+import { Settings, Trash2 } from 'lucide-react'
+import { useStore, type ChartConfig } from '../store/useStore'
 
 interface ChartProps {
   chart: ChartConfig
@@ -9,7 +9,7 @@ interface ChartProps {
 }
 
 export const Chart: React.FC<ChartProps> = ({ chart, dashboardId }) => {
-  const { dataSources, updateChart, deleteChart, setSelectedChartId } = useStore()
+  const { dataSources, updateChart, deleteChart } = useStore()
   const [showSettings, setShowSettings] = useState(false)
 
   const dataSource = dataSources.find((ds) => ds.id === chart.dataSourceId)
